@@ -35,6 +35,11 @@ cd backend-nodejs-06
 ## Pasos para correr el proyecto
 Deberás tener instalado NodeJS en tu computadora. Puedes descargarlo [aquí](https://nodejs.org/en/)
 
+Corre las migraciones para que sean creadas las tablas en tu base de datos local (Esto solo deberá hacerse la primera vez y cada que exista un cambio en la carpeta de `migrations`):
+```sh
+npm run run-migration
+```
+
 Para poder ejecutar el proyecto, basta con que corras el siguiente script estando en la raiz del proyecto
 
 ```sh
