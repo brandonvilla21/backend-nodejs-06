@@ -1,6 +1,12 @@
+const helmet = require('helmet')
+const cors = require('cors')
 const express = require('express')
 const app = express();
 const routes = require('./routes')
+
+// Basic configuration
+app.use(helmet());
+app.use(cors());
 
 // Sustituto de body-parser: sirve para manejar JSONs en los peticiones
 app.use(express.urlencoded({ extended: true }))
