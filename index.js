@@ -1,10 +1,3 @@
-/**
-  Agregar el modelo de usuario junto con migraciones
-    - Crear archivo de migracion
-      npm run create-migration -- CreateTableUsers
-    - Crear el modelo
-    - Agregarlo a db.js
- */
 const express = require('express')
 const app = express();
 const routes = require('./routes')
