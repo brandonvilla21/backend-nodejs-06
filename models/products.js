@@ -6,6 +6,14 @@ module.exports = (sequelize) => sequelize.define('products', {
   description: DataTypes.TEXT,
   price: DataTypes.FLOAT,
   image: DataTypes.STRING,
+  userId: {
+    type: DataTypes.INTEGER,
+    reference: {
+      model: 'users',
+      key: 'id'
+    },
+    onDelete: 'CASCADE'
+  },
   createdAt: DataTypes.DATE,
   updatedAt: DataTypes.DATE,
 }, {

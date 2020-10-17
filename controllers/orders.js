@@ -55,6 +55,8 @@ async function getFullOrder(request, response) {
   try {
     const { id } = request.params
     const orders = await models.orders.findByPk(id, { include: [models.products, models.users] });
+    delete orders.dataValues.user.dataValues.password
+    
     return response.status(200).json({ data: orders });
   } catch (error) {
     response.sendStatus(500)
