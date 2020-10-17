@@ -32,6 +32,11 @@ Entra a la carpeta que se generó:
 cd backend-nodejs-06
 ```
 
+Instala las dependencias
+```sh
+npm install
+```
+
 ## Pasos para correr el proyecto
 Deberás tener instalado NodeJS en tu computadora. Puedes descargarlo [aquí](https://nodejs.org/en/)
 
