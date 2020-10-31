@@ -20,7 +20,7 @@ async function login(request, response) {
     }
 
     // Generar el token y devolverlo en la respuesta (jsonwebtoken)
-    const token = jwt.sign({ userId: user.id }, 'mysupersecretkey', {
+    const token = jwt.sign({ userId: user.id, message: 'hola' }, 'mysupersecretkey', {
       expiresIn: 36000
     })
     // Devolver un objeto con la siguiente informacion: { message: 'Authenticated successfully!', token: '' }

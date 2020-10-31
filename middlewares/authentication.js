@@ -9,6 +9,7 @@ function authenticate(request, response, next) {
       console.log(error)
       return response.status(401).json({ message: 'Unauthorized' })
     }
+    console.log('DECODIFICADO =>>>>', decoded)
     request.user = await models.users.findByPk(decoded.userId)
     next()
   })

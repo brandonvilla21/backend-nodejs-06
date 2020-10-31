@@ -13,7 +13,8 @@ async function getAllProducts(request, response) {
 
 async function createProduct(request, response) {
   try {
-    const product = await models.products.create(request.body)
+    console.log(request.user)
+    const product = await models.products.create({ ...request.body, userId: request.user.id })
     response.status(201).json({ data: product })
   } catch(error) {
     response.sendStatus(500)
@@ -39,6 +40,11 @@ async function deleteProduct(request, response) {
   try {
     const { id } = request.params;
     const product = await models.products.findByPk(id);
+    
+    if (request.user.id !== product.userId) {
+      return response.status(401).json({ code: 401, message: 'Unauthorized' });
+    }
+
     if (!product) {
       return response.status(404).json({ code: 404, message: 'Product not found' });
     }
